@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <cmath>
 
 using std::cout;
 using std::endl;
@@ -50,8 +51,10 @@ public:
     void init(string dataset_path, int iteration, int MaxOV, int PerOV, int Numrun, int NumSeed);
     v1d<int> CreateSeedset(v1d<int> useful, int NumSeed);
     v1d<int> transition(v1d<int> useful, v1d<int> Seedset);
-    int ObjectValue(v1d<int> Seedset, int MaxObjectValue);
+    int ObjectValue(v1d<int> Seedset);
     bool determination(v1d<int> Seedset, int ObjectValue);
+    int random(int max);
+    int random(int min, int max);
     // int ObjectValue(v1d<int> Seedset, v1d<int> &useful, int MaxObjectValue);
     // int ObjectValue(v1d<int> Seedset, int times, int MaxObjectValue);
 
@@ -70,5 +73,21 @@ private:
     v1d<int> mSeedset;
     double mObjectValue;
     void init();
+};
+class sa : public search_algorithm
+{
+public:
+    sa(int neighbor, double maxTemperature, double minTemperature);
+    virtual void run();
+
+private:
+    int neighbor;
+    double maxTemperature;
+    double minTemperature;
+    double nowTemperature;
+    v1d<int> mSeedset;
+    double mObjectValue;
+    void init();
+    void createNeighbor();
 };
 #endif

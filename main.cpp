@@ -7,13 +7,12 @@ int main(int argc, char **argv)
 
     if (algorithm == "hc")
         search_alg = new hc();
-    // else if (algorithm == "sa")
-    //     search_alg = new sa(
-    //         atoi(argv[8]),  // neighbor
-    //         atof(argv[9]),  // max_temperature
-    //         atof(argv[10]), // min_temperature
-    //         atof(argv[11])  // decrease_rate
-    //     );
+    else if (algorithm == "sa")
+        search_alg = new sa(
+            atoi(argv[8]), // neighbor
+            atof(argv[9]), // max_temperature
+            atof(argv[10]) // min_temperature
+        );
     // else if (algorithm == "ga")
     //     search_alg = new ga(
     //         atoi(argv[8]), // num_cms

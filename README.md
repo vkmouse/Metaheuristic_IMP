@@ -2,6 +2,7 @@
 Four metaheuristic algorithms include simulated annealing (SA), genetic algorithm (GA), coral reefs optimization (CRO), and search economics (SE). An improvement metaheuristic algorithm is simulated annealing with search partition (SASP). And the greedy algorithm is hill climbing (HC). Two important algorithms are SE and SASP.
 
 ## SEIM: *Search Economics for Influence Maximization*
+Created by Shih-Jui Liu and Chun-Wei Tsai at National Chung Hsing University CSE, and Chi-Yuan Chen at National Ilan University CSIE.
 ## SASP: *Simulated Annealing with Search Partition*
 Created by Shih-Jui Liu and Chun-Wei Tsai at National Chung Hsing University CSE.
 

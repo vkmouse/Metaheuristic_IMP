@@ -56,7 +56,7 @@ v1d<int> search_algorithm::transition(v1d<int> useful, v1d<int> Seedset)
     Seedset[rand() % (Seedset.size())] = tmp;
     return Seedset;
 }
-int search_algorithm::ObjectValue(v1d<int> Seedset, int MaxObjectValue)
+int search_algorithm::ObjectValue(v1d<int> Seedset)
 {
     v1d<int> Status;
     v1d<int> newActiveSeedset;
@@ -179,4 +179,16 @@ v1d<string> search_algorithm::split(string str, string pattern)
         }
     }
     return result;
+}
+int search_algorithm::random(int max)
+{
+    if (max == 0)
+        return 0;
+    return rand() % (max + 1);
+}
+int search_algorithm::random(int min, int max)
+{
+    double tmp = 0.0 + rand() / static_cast<double>(RAND_MAX);
+    tmp = tmp * (max - min + 1) + min;
+    return tmp;
 }

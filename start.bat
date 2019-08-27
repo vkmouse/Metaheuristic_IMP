@@ -5,4 +5,9 @@ set PerOV=2000
 set Numrun=2
 set NumSeed=200
 
-main.exe hc %dataset_path% %iteration% %MaxOV% %PerOV% %Numrun% %NumSeed%
+set neighbor=7
+set maxTemperature=10
+set minTemperature=0.001
+
+REM main.exe hc %dataset_path% %iteration% %MaxOV% %PerOV% %Numrun% %NumSeed%
+main.exe sa %dataset_path% %iteration% %MaxOV% %PerOV% %Numrun% %NumSeed% %neighbor% %maxTemperature% %minTemperature%
