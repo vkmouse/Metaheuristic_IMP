@@ -13,12 +13,12 @@ int main(int argc, char **argv)
             atof(argv[9]), // max_temperature
             atof(argv[10]) // min_temperature
         );
-    // else if (algorithm == "ga")
-    //     search_alg = new ga(
-    //         atoi(argv[8]), // num_cms
-    //         atof(argv[9]), // Pc
-    //         atof(argv[10]) // Pm
-    //     );
+    else if (algorithm == "ga")
+        search_alg = new ga(
+            atoi(argv[8]), // NumCms
+            atof(argv[9]), // Pc
+            atof(argv[10]) // Pm
+        );
     // else if (algorithm == "se")
     //     search_alg = new se(
     //         atoi(argv[8]),  // num_searcher

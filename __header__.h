@@ -71,7 +71,7 @@ public:
 
 private:
     v1d<int> mSeedset;
-    double mObjectValue;
+    int mObjectValue;
     void init();
 };
 class sa : public search_algorithm
@@ -86,8 +86,27 @@ private:
     double minTemperature;
     double nowTemperature;
     v1d<int> mSeedset;
-    double mObjectValue;
+    int mObjectValue;
     void init();
     void createNeighbor();
+};
+class ga : public search_algorithm
+{
+public:
+    ga(int NumCms, double Pc, double Pm);
+    virtual void run();
+
+private:
+    int NumCms;
+    double Pc;
+    double Pm;
+    v2d<int> CmsSet;
+    v1d<int> CmsObjectValue;
+
+    void init();
+    void selection();
+    void mutation();
+    void fitness();
+    void crossover(double changeRate);
 };
 #endif
