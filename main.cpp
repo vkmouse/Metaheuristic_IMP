@@ -1,4 +1,5 @@
 #include "__header__.h"
+#include <algorithm>
 
 int main(int argc, char **argv)
 {
@@ -19,13 +20,24 @@ int main(int argc, char **argv)
             atof(argv[9]), // Pc
             atof(argv[10]) // Pm
         );
-    // else if (algorithm == "se")
-    //     search_alg = new se(
-    //         atoi(argv[8]),  // num_searcher
-    //         atoi(argv[9]),  // num_region
-    //         atoi(argv[10]), // num_sample
-    //         atoi(argv[11])  // num_player
-    //     );
+    else if (algorithm == "cro")
+        search_alg = new cro(
+            atoi(argv[8]),  // n1
+            atoi(argv[9]),  // n2
+            atof(argv[10]), // Pi
+            atof(argv[11]), // Fb
+            atoi(argv[12]), // K
+            atof(argv[13]), // Fa
+            atof(argv[14]), // Fd
+            atof(argv[15])  // Pd
+        );
+    else if (algorithm == "se")
+        search_alg = new se(
+            atoi(argv[8]),  // num_searcher
+            atoi(argv[9]),  // num_region
+            atoi(argv[10]), // num_sample
+            atoi(argv[11])  // num_player
+        );
 
     search_alg->init(
         argv[2],        // dataset_path

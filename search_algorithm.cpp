@@ -1,4 +1,5 @@
 #include "__header__.h"
+#include <algorithm>
 #include <time.h>
 
 using std::ifstream;
@@ -191,4 +192,35 @@ int search_algorithm::random(int min, int max)
     double tmp = 0.0 + rand() / static_cast<double>(RAND_MAX);
     tmp = tmp * (max - min + 1) + min;
     return tmp;
+}
+bool search_algorithm::checkRepeatElement(v1d<int> vec, int element)
+{
+    for (int i = 0; i < vec.size(); i++)
+        if (element == vec[i])
+            return true;
+    return false;
+}
+void search_algorithm::crossoverTwoSolution(v1d<int> &sol1, v1d<int> &sol2, double changeRate)
+{
+    // generate crossover mask
+    v1d<int> index(NumSeed);
+    for (int j = 0; j < NumSeed; j++)
+    {
+        index[j] = j;
+    }
+    std::random_shuffle(index.begin(), index.end());
+
+    // crossover
+    int numCrossoverElements = 0;
+    for (int j = 0; j < NumSeed && numCrossoverElements < NumSeed * changeRate; j++)
+    {
+        if (checkRepeatElement(sol1, sol2[index[j]]) == false &&
+            checkRepeatElement(sol2, sol1[index[j]]) == false)
+        {
+            int temp = sol1[index[j]];
+            sol1[index[j]] = sol2[index[j]];
+            sol2[index[j]] = temp;
+            numCrossoverElements++;
+        }
+    }
 }

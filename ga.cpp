@@ -1,5 +1,4 @@
 #include "__header__.h"
-#include <algorithm>
 
 ga::ga(int NumCms, double Pc, double Pm)
 {
@@ -86,19 +85,7 @@ void ga::crossover(double changeRate)
         double f = static_cast<double>(rand()) / RAND_MAX;
         if (Pc > f)
         {
-            // generate crossover mask
-            v1d<int> index(NumCms);
-            for (int j = 0; j < NumCms; j++)
-            {
-                index[j] = j;
-            }
-            std::random_shuffle(index.begin(), index.end());
-            for (int j = 0; j < NumCms * changeRate; j++)
-            {
-                int temp = CmsSet[i][index[j]];
-                CmsSet[i][index[j]] = CmsSet[i + 1][index[j]];
-                CmsSet[i + 1][index[j]] = temp;
-            }
+            crossoverTwoSolution(CmsSet[i], CmsSet[i + 1], 0.005);
         }
     }
 }
