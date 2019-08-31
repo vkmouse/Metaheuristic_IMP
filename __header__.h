@@ -190,4 +190,24 @@ private:
     void AsexualReproduction(v1d<struct Reef> &ReefSet, v1d<int> rank, v2d<int> &Map, double Fa);
     void Depredation(v1d<struct Reef> &ReefSet, v1d<int> rank, v2d<int> &Map, double Fd, double Pd);
 };
+class sasp : public search_algorithm
+{
+public:
+    sasp(int numPartition, int neighbor, double maxTemperature, double minTemperature);
+    virtual void run();
+
+private:
+    int neighbor;
+    double maxTemperature;
+    double minTemperature;
+    double nowTemperature;
+    v1d<int> mSeedset;
+    int mObjectValue;
+    int numPartition;      // sasp
+    v2d<int> useful;       // sasp
+    int numOVPerPartition; // sasp
+    void init();
+    void createNeighbor();
+    void createNeighbor(int partition);
+};
 #endif

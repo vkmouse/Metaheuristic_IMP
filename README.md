@@ -22,23 +22,22 @@ Six parameters are required for all algorithms to execute the program. Each algo
 3. Number of evaluations
 4. Number of evaluations per output
 5. Number of runs
-6. Path of the initial solution
+6. Number of seeds
 
 #### Hill climbing
-No other parameter is required to execute the HC. For example, dataset path is "Dataset/DS2.txt", number of iterations is 10000, number of evaluations is 10000, number of evaluations per output is 1000, number of runs is 2, and path of the initial solution is "init_sol/init_02.txt".
+No other parameter is required to execute the HC. For example, dataset path is "dataset.txt", number of iterations is 10000, number of evaluations is 10000, number of evaluations per output is 400, number of runs is 2, and number of seeds is 200.
 
-    main.exe hc Dataset/DS2.txt 10000 10000 1000 2 init_sol/init_02.txt
+    main.exe hc dataset.txt 10000 10000 400 2 200
 
 #### Simulated annealing
-Four parameters are required to execute the SA.
+Three parameters are required to execute the SA.
 1. Number of neighbors
 2. Initial temperature
 3. Minimum temperature
-4. Cooling rate
 
-For example, number of neighbors is 7, initial temperature is 10, minimum temperature is 0.01, and cooling rate is 0.98.
+For example, number of neighbors is 7, initial temperature is 10, and minimum temperature is 0.01.
  
-    main.exe sa Dataset/DS2.txt 10000 10000 1000 2 init_sol/init_02.txt 7 10 0.01 0.98
+    main.exe sa dataset.txt 10000 10000 400 2 200 7 10 0.01
 
 #### Genetic algorithm
 Three parameters are required to execute the GA.
@@ -48,7 +47,22 @@ Three parameters are required to execute the GA.
 
 For example, number of chromsomes is 20, crossover rate is 0.6, and mutation rate is 0.9.
  
-    main.exe ga Dataset/DS2.txt 10000 10000 1000 2 init_sol/init_02.txt 20 0.6 0.9
+    main.exe ga dataset.txt 10000 10000 400 2 200 20 0.6 0.9
+
+#### Coral reefs optimization
+Eight parameters are required to execute the CRO.
+1. The width of the grid (n1)
+2. The length of the grid (n2)
+3. The probability of the initial production
+4. The fraction of the broadcast spawners
+5. Number of steps for the reef formation phase
+6. The fraction of the asexual reproduction
+7. The fraction of the depredation 
+8. The probability of the depredation
+
+For example, n1 and n2 are 4, the probability of the initial production is 0.8, the fraction of the broadcast spawners is 0.1, number of steps for the reef formation phase is 3, the fraction of the asexual reproduction is 0.01, the fraction of the depredation is 0.1, and the probability of the depredation is 0.1
+
+    main.exe cro dataset.txt 10000 10000 400 2 200 4 4 0.8 0.1 3 0.01 0.1 0.1
 
 #### Search economics
 Four parameters are required to execute the SE.
@@ -59,5 +73,15 @@ Four parameters are required to execute the SE.
 
 For example, number of searchers is 4, number of regions is 4, number of samples is 2, and number of players is 3.
  
-    main.exe se Dataset/DS2.txt 10000 10000 1000 2 init_sol/init_02.txt 4 4 2 3
+    main.exe se dataset.txt 10000 10000 400 2 200 4 4 2 3
 
+#### Simulated annealing with search partition
+Four parameters are required to execute the SASP.
+1. Number of partitions
+2. Number of neighbors
+3. Initial temperature
+4. Minimum temperature
+
+For example, number of partitions is 4, number of neighbors is 7, initial temperature is 10, and minimum temperature is 0.01.
+ 
+    main.exe sasp dataset.txt 10000 10000 400 2 200 4 7 10 0.01

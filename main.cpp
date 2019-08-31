@@ -38,6 +38,13 @@ int main(int argc, char **argv)
             atoi(argv[10]), // num_sample
             atoi(argv[11])  // num_player
         );
+    else if (algorithm == "sasp")
+        search_alg = new sasp(
+            atoi(argv[8]),  // numPartition
+            atoi(argv[9]),  // neighbor
+            atof(argv[10]), // max_temperature
+            atof(argv[11])  // min_temperature
+        );
 
     search_alg->init(
         argv[2],        // dataset_path
