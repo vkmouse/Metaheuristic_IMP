@@ -1,5 +1,12 @@
+### Outline
+
+- [Description](#Description)
+- [Compile](#Compile)
+- [Usage](#Usage)
+  - [For example](#For-example)
+  
 ### Description
-There are five social network datasets [soc-Epinions1 (DS1)](https://snap.stanford.edu/data/soc-Epinions1.html), [Slashdot901 (DS2)](https://snap.stanford.edu/data/soc-Slashdot0902.html), [Amazon0302 (DS3)](https://snap.stanford.edu/data/amazon0302.html), [Amazon0601 (DS4)](https://snap.stanford.edu/data/amazon0601.html), and [com-youtube.ungraph (DS5)](https://snap.stanford.edu/data/com-Youtube.html), respectively. IMP has one parameter that is the probability of propagation, so use "CreateSampleDataset.cpp" to sample. The information for the datasets is described in the following table.
+There are five social network datasets [soc-Epinions1 (DS1)](https://snap.stanford.edu/data/soc-Epinions1.html), [Slashdot901 (DS2)](https://snap.stanford.edu/data/soc-Slashdot0902.html), [Amazon0302 (DS3)](https://snap.stanford.edu/data/amazon0302.html), [Amazon0601 (DS4)](https://snap.stanford.edu/data/amazon0601.html), and [com-youtube.ungraph (DS5)](https://snap.stanford.edu/data/com-Youtube.html), respectively. IMP has one parameter that is the probability of propagation, so use **CreateSampleDataset.cpp** to sample. The information for the datasets is described in the following table.
 
 
 Dataset | number of nodes | number of edges | propagation probability
@@ -21,6 +28,6 @@ Three parameters are required to execute the program.
 3. Output filename
 
 #### For example
-Generate a sample "Sample.txt" with dataset "amazon0302.txt". Propagation probability is 0.05
+Generate a sample **Sample.txt** with dataset **amazon0302.txt**. Propagation probability is 0.05
 
     CreateSampleDataset.exe amazon0302.txt 0.05 > Sample.txt

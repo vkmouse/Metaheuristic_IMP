@@ -1,12 +1,22 @@
 ## Metaheuristic algorithms for the influence maximization problem in the social network
 This code implements a greedy algorithm, four metaheuristic algorithms, and a improvement metaheuristic algorithm to solve the influence maximization problem (IMP) in the social network. Four metaheuristic algorithms include simulated annealing (SA), genetic algorithm (GA), coral reefs optimization (CRO), and search economics (SE). An improvement metaheuristic algorithm is simulated annealing with search partition (SASP). And the greedy algorithm is hill climbing (HC). Two important algorithms are SE and SASP.
 
+- [Introduction](#Introduction)
+- [Compile](#Compile)
+- [Usage](#Usage)
+  - [Hill climbing](#Hill-climbing)
+  - [Simulated annealing](#Simulated-annealing)
+  - [Genetic algorithm](#Genetic-algorithm)
+  - [Coral reefs optimization](#Coral-reefs-optimization)
+  - [Search economics](#Search-economics)
+  - [Simulated annealing with search partition](#Simulated-annealing-with-search-partition)
+
 ### Introduction
 [Search economics (SE)](https://doi.org/10.1109/SMC.2015.447) is a novel metaheuristic algorithm proposed in 2015. The two main differences between SE and traditional metaheuristic are dividing the search space and investing computation resource depending on the potential of each subspace. The simulated results show that the [SEIM](https://doi.org/10.1016/j.future.2018.08.033) is able to find a better solution than the HC, and SA. [SASP](https://doi.org/10.1016/j.procs.2017.08.306) is based on a search space partitioning machism to improve result of SA. Search space partition divides the solution space into many regions, and then search in the region or in all solution space in different period.
 
 
 ### Compile
-Install GCC 4.7 or newer version in the [link](https://sourceforge.net/projects/mingw-w64/files/). Execute the command "make" in the path of the Makefile to compile the code.
+Install GCC 4.7 or newer version in the [link](https://sourceforge.net/projects/mingw-w64/files/). Execute the command ```make``` in the path of the Makefile to compile the code.
 
     make
 
@@ -20,7 +30,7 @@ Six parameters are required for all algorithms to execute the program. Each algo
 6. Number of seeds
 
 #### Hill climbing
-No other parameter is required to execute the HC. For example, dataset path is "dataset.txt", number of iterations is 10000, number of evaluations is 10000, number of evaluations per output is 400, number of runs is 2, and number of seeds is 200.
+No other parameter is required to execute the HC. For example, dataset path is **dataset.txt**, number of iterations is 10000, number of evaluations is 10000, number of evaluations per output is 400, number of runs is 2, and number of seeds is 200.
 
     main.exe hc dataset.txt 10000 10000 400 2 200
 
@@ -46,8 +56,8 @@ For example, number of chromsomes is 20, crossover rate is 0.6, and mutation rat
 
 #### Coral reefs optimization
 Eight parameters are required to execute the CRO.
-1. The width of the grid (n1)
-2. The length of the grid (n2)
+1. The width of the grid (n<sub>1</sub>)
+2. The length of the grid (n<sub>2</sub>)
 3. The probability of the initial production
 4. The fraction of the broadcast spawners
 5. Number of steps for the reef formation phase
@@ -55,7 +65,7 @@ Eight parameters are required to execute the CRO.
 7. The fraction of the depredation 
 8. The probability of the depredation
 
-For example, n1 and n2 are 4, the probability of the initial production is 0.8, the fraction of the broadcast spawners is 0.1, number of steps for the reef formation phase is 3, the fraction of the asexual reproduction is 0.01, the fraction of the depredation is 0.1, and the probability of the depredation is 0.1
+For example, n<sub>1</sub> and n<sub>2</sub> are 4, the probability of the initial production is 0.8, the fraction of the broadcast spawners is 0.1, number of steps for the reef formation phase is 3, the fraction of the asexual reproduction is 0.01, the fraction of the depredation is 0.1, and the probability of the depredation is 0.1
 
     main.exe cro dataset.txt 10000 10000 400 2 200 4 4 0.8 0.1 3 0.01 0.1 0.1
 
